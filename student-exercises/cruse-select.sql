@@ -13,8 +13,3 @@ USE rockStarDay2;
 -- SELECT * FROM band WHERE name LIKE '%_and_%';
 -- SELECT * FROM individual WHERE firstName LIKE '___';
 -- SELECT * FROM band WHERE name LIKE '%s';
-
-
-
-
-
