@@ -48,3 +48,25 @@ LEFT JOIN team ON roster.teamID = team.ID
 LEFT JOIN player ON player.ID = playerID 
 */
 
+/*
+-- Exercise: Order BY
+SELECT batting.battingAVG
+, batting.ID
+, team.teamName 
+FROM team
+INNER JOIN batting ON batting.teamID = team.ID
+ORDER BY battingAVG DESC;
+
+SELECT firstName, lastName, ABBR, hits FROM baseball.vbattingleaders
+ORDER BY hits DESC
+
+SELECT firstName, lastName, ABBR, hits FROM baseball.vbattingleaders
+ORDER BY hits ASC
+
+SELECT firstName, lastName, teamName, atbats FROM baseball.vbattingleaders
+ORDER BY teamName, atbats DESC 
+*/
+
+
+
+
