@@ -1,4 +1,3 @@
--- USE rockStarDay2;
 
 -- SELECT * FROM individual WHERE LastName = 'Jennings';
 -- SELECT ID, LASTNAME FROM individual WHERE DeceasedDate IS NOT NULL;
@@ -31,22 +30,22 @@ INNER JOIN roster ON roster.playerID = player.ID
 INNER JOIN team ON roster.teamID = team.ID
 WHERE teamName = 'Boston Red Sox'
 */
+
 -- SELECT * FROM vteamRoster;
 -- describe vteamRoster; 
 -- SHOW CREATE VIEW vteamRoster; 
 
--- Ex more fun with joins: 
 /*
+-- Ex more fun with joins:
 SELECT * FROM roster 
 LEFT JOIN team ON roster.teamID = team.ID
 LEFT JOIN player ON roster.playerID = player.ID
+
+SELECT * FROM roster
+RIGHT JOIN team ON team.ID = roster.teamID
+WHERE roster.ID is not null;
 */
 
-/*
-SELECT * FROM roster
-LEFT JOIN team ON roster.teamID = team.ID
-LEFT JOIN player ON player.ID = playerID 
-*/
 
 /*
 -- Exercise: Order BY
@@ -66,6 +65,39 @@ ORDER BY hits ASC
 SELECT firstName, lastName, teamName, atbats FROM baseball.vbattingleaders
 ORDER BY teamName, atbats DESC 
 */
+
+/*
+-- Query Exercises: 
+-- Query 1:
+SELECT vteamRoster.playerName, batting.battingAvg FROM vteamRoster 
+INNER JOIN batting ON batting.playerID = vteamRoster.playerID
+*/
+-- Query 2:
+/*
+SELECT COUNT(vteamRoster.divisionName)
+, vteamRoster.playerName
+, batting.battingAvg
+, vteamRoster.Weight
+, vteamRoster.divisionName 
+FROM vteamRoster 
+INNER JOIN batting ON batting.playerID = vteamRoster.playerID
+*/
+
+/*
+SELECT ROUND(AVG(weight)) AS 'AVG Weight of Batting Leaders'
+FROM vteamRoster
+    INNER JOIN batting ON vteamRoster.playerID = batting.playerID
+ORDER BY batting.battingAvg DESC;
+*/
+/*
+-- Query 4: 
+SELECT COUNT(vteamRoster.playerID), vteamRoster.playerName
+FROM vteamRoster;
+*/
+
+
+
+
 
 
 
